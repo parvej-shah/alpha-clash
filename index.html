@@ -1,27 +1,141 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interio-A3</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplha Clash</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-              }
-            }
-          }
-        }
-      </script>
-</head>
-<body>
-  <div class="h-dvh bg-gradient-to-br from-pink-600 to-pink-300 flex justify-center items-center">
-    <h2 class="text-3xl font-black bg-clip-text bg-gradient-to-l from-rose-900 to-teal-900 text-transparent">Hello Tailwind</h2>
-  </div>
-</body>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      .font-anton {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .font-inter {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body class="bg-[#010313] font-inter">
+    <main
+      class="container mx-auto bg-[url('./images/background.png')] min-h-screen bg-center bg-no-repeat bg-contain"
+    >
+      <section
+        id="home"
+        class="flex justify-center items-center min-h-screen"
+      >
+        <div class="text-center space-y-10">
+          <h1 class="text-9xl text-white font-black">ALPHABET CLASH</h1>
+          <p class="font-medium text-2xl text-white">
+            Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+          </p>
+          <button
+            class="btn bg-white text-[#010313] rounded-lg font-semibold text-2xl" onclick="play()"
+          >
+            Play Now
+          </button>
+        </div>
+      </section>
+      <section id="play-ground" class="flex justify-center items-center min-h-screen hidden">
+        <div class=" space-y-16">
+          <div class="artboard artboard-horizontal phone-5 bg-white/70 border-[20px] border-[#010313]/80 flex justify-center items-center flex-col">
+            <div class="bg-[#2F2941]  rounded-b-xl pb-2">
+              <p class="font-medium text-lg text-white px-4 scroll-pb-44">Don't watch keyboard  while playing...</p>
+            </div>
+            <div class="h-full flex justify-center items-center"><p id="current-alphabet" class="uppercase font-semibold text-9xl text-[#010313]"></p></div>
+          </div>
+          <div>
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd class="kbd" id="q">q</kbd>
+              <kbd class="kbd" id="w">w</kbd>
+              <kbd class="kbd" id="e">e</kbd>
+              <kbd class="kbd" id="r">r</kbd>
+              <kbd class="kbd" id="t">t</kbd>
+              <kbd class="kbd" id="y">y</kbd>
+              <kbd class="kbd" id="u">u</kbd>
+              <kbd class="kbd" id="i">i</kbd>
+              <kbd class="kbd" id="o">o</kbd>
+              <kbd class="kbd" id="p">p</kbd>
+            </div>
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd class="kbd" id="a">a</kbd>
+              <kbd class="kbd" id="s">s</kbd>
+              <kbd class="kbd" id="d">d</kbd>
+              <kbd class="kbd" id="f">f</kbd>
+              <kbd class="kbd" id="g">g</kbd>
+              <kbd class="kbd" id="h">h</kbd>
+              <kbd class="kbd" id="j">j</kbd>
+              <kbd class="kbd" id="k">k</kbd>
+              <kbd class="kbd" id="l">l</kbd>
+            </div>
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd class="kbd" id="z">z</kbd>
+              <kbd class="kbd" id="x">x</kbd>
+              <kbd class="kbd" id="c">c</kbd>
+              <kbd class="kbd" id="v">v</kbd>
+              <kbd class="kbd" id="b">b</kbd>
+              <kbd class="kbd" id="n">n</kbd>
+              <kbd class="kbd" id="m">m</kbd>
+              <kbd class="kbd" id="/">/</kbd>
+            </div>
+          </div>
+          <div class="flex justify-between items-center">
+            <button
+              class="btn bg-[#894189] border-none text-white font-medium text-lg"
+            >
+              Life <img src="./images/herart.svg" alt="" />
+              <span id="life">1</span>
+            </button>
+
+            <button
+              class="btn bg-[#360490] border-none text-white font-medium text-lg"
+            >
+              Score <img src="./images/monetization_on.svg" alt="" />
+              <span id="score">0</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="result" class="flex justify-center items-center min-h-screen text-center hidden">
+        <div class="space-y-4 bg-gradient-to-l from-[#501ca7] to-white/30 p-9 rounded-2xl">
+          <p class="font-black text-6xl text-white">Score: <span id="final-score" class="font-medium">14</span></p>
+          <button
+          class="btn bg-white text-[#010313] rounded-lg font-semibold text-2xl"
+        >
+          Play Again
+        </button>
+        <p class="font-medium text-xl text-white">Parctice will make you Pro</p>
+        </div>
+      </section>
+    </main>
+    <script src="./js-file/utility.js"></script>
+    <script src="./js-file/main.js"></script>
+  </body>
 </html>
