@@ -111,7 +111,7 @@
               class="btn bg-[#894189] border-none text-white font-medium text-lg"
             >
               Life <img src="./images/herart.svg" alt="" />
-              <span id="life">1</span>
+              <span id="life">5</span>
             </button>
 
             <button
@@ -125,8 +125,9 @@
       </section>
       <section id="result" class="flex justify-center items-center min-h-screen text-center hidden">
         <div class="space-y-4 bg-gradient-to-l from-[#501ca7] to-white/30 p-9 rounded-2xl">
+          <p>Game Over!</p>
           <p class="font-black text-6xl text-white">Score: <span id="final-score" class="font-medium">14</span></p>
-          <button
+          <button onclick="play()"
           class="btn bg-white text-[#010313] rounded-lg font-semibold text-2xl"
         >
           Play Again

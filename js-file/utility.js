@@ -15,3 +15,13 @@ function getARandomAlphabet(){
     const randomAlphabet = alphabets[randomNumber];
     return randomAlphabet;
 }
+function getInnerTextById(elementId){
+    const innerText = document.getElementById(elementId).innerText;
+    return innerText;
+}
+function setInnerTextById(elementId,value){
+    document.getElementById(elementId).innerText = value;
+}
+function removeBgColorById(elementId){
+    document.getElementById(elementId).classList.remove('bg-orange-400')
+}
